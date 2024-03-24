@@ -1,0 +1,181 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>main</title>
+	<link rel="icon" href="image/icon.jpg">
+	<script language="JavaScript">
+	</script>
+	<style type="text/css">
+		* {
+			margin: 0px;
+		}
+		table {
+			margin: auto;
+			border: 2px;
+			border-color: #647EF7;
+			border-style: solid;
+			border-radius: 25px;
+			border-collapse: collapse;
+			border-style: hidden;
+			box-shadow: 0 0 0 1px #647EF7;
+			font-weight:normal;
+		}
+		th::selection {
+			background: yellow;
+			color: red;
+		}
+		div.right {
+			position: fixed;
+			padding: 0px;
+			right: 0px;
+			cursor: pointer;
+			opacity: 0.9;
+		}
+		div.kuai{
+			display: inline-block;
+			padding-left: 20px;
+		}
+    	.aa {
+			border: black 2px solid;
+		}
+
+		.aa:hover {
+			border: #E35153 2px solid;
+		}
+		img.zhaopian{
+			padding-top:15px; 
+			padding-bottom:3px;
+		}
+		table.Basicinformation{
+			text-align:left;
+			font-size:15px;
+			opacity:inherit;
+		}
+		th{
+			padding-left: 21px;
+		}
+		.top{
+			padding-top: 15px;
+		}
+		.bottom{
+			padding-bottom: 15px;
+		}
+		.xiaobiaoti1{
+			display: inline-block;
+			padding-top: 10px;
+			font-size:23px;
+			font-family:楷体;
+			font-weight:900;
+		}
+		.xiaobiaoti{
+			text-align: left;
+			padding-top: 10px;
+			padding-bottom: 5px;
+			padding-left: 20px;
+			font-size:25px;
+			font-family:楷体;
+			font-weight:900;
+		}
+		.dabiaoti{
+			display: inline-block;
+			padding:10px 10px 10px 15px;
+			font-size:36px;
+			font-family:楷体;
+			font-weight:900;
+		}
+		div.xxxx{
+			border-width: 1px;
+			border-style: solid;
+			border-radius:25px;
+			border-color:#1497FC;
+			width: 600px;
+			position: absolute; 
+	        top: 13px;
+			background-color:white;
+			opacity:inherit;
+		}
+		p{
+			padding-left: 20px;
+			padding-right: 20px;
+			font-size:18px;
+			word-break:break-all;
+		}
+		#big{
+			width:880px;
+			margin: auto;
+			opacity:0.9;
+		}
+	</style>
+</head>
+
+<body background="image/top/sea.jpg">
+	<a name="head"></a>
+	<div id="big">
+		<div class="kuai" height="100%">
+			<div class="top">
+			<table height="100%" width="240" frame="box" bgcolor="white" class="Basicinformation">
+				<tr>
+					<th>
+						<img class="zhaopian" src="image/main/photo.jpg" width="200" alt="诶呀，图片掉到黑洞里了" title="hi，很高兴认识你！"/>
+					</th>
+				</tr>
+				<tr><th>姓名：aye</th></tr>
+				<tr><th>在读学校：xxxxxx</th></tr>
+				<tr><th>所属学院：xxxxxx</th></tr>
+				<tr><th class="bottom">所读专业：xxxxxx</th></tr>
+		    </table>
+			</div>
+			<div class="top">
+				<table height="100%" width="240" frame="box" bgcolor="white" class="Basicinformation">
+				<tr>
+					<th class="top" width="50">
+						<img src="image/main/phone.jpg" width="50" alt="诶呀，图片掉到黑洞里了" />
+					</th>
+					<th>
+						<div class="xiaobiaoti1">联系方式</div>
+					</th>
+				</tr>
+			    <tr><th colspan="2">联系电话:xxxxxx</th></tr>
+				<tr><th colspan="2">QQ:xxxxxx</th></tr>
+				<tr><th colspan="2">邮箱：xxxxxxxxx</th></tr>
+				<tr><th class="bottom" colspan="2">主页：<a href="main.html">aye的主页</a></th></tr>
+		    </table>
+			</div>
+		</div>
+		<div class="kuai" height="100%">
+			<div class="xxxx">
+				<div class="dabiaoti">详细信息</div><hr style="border: 1px solid #1497FC;"/><!--1.5.4 分隔线-->
+				<h2 class="xiaobiaoti">身份信息</h2>
+				<p align="left">姓名：xxx</p>
+				<p align="left">性别：xxx</p>
+				<p align="left">出生日期：xxx</p>
+				<p align="left">出生地：xxx</p>
+				<p align="left">民族：xxx</p>
+				<p align="left" class="bottom">就读院校：xxxxxxxxx</p>
+				<hr style="border: 0.5px solid #1497FC;"/>
+				<h2 class="xiaobiaoti">教育经历</h2>
+				<p align="left">xxxxxx</p>
+				<p align="left">xxxxxx</p>
+				<p align="left">xxxxxx</p>
+				<p align="left" class="bottom">xxxxxx</p>
+				<hr style="border: 0.5px solid #1497FC;"/>
+				<h2 class="xiaobiaoti">所属专业主要课程</h2>
+				<p align="left" class="bottom">xxxxxx等。</p>
+			</div>
+		</div>
+	</div>
+	<div class="right" style="top:10%">
+		<div class="right" style="top:10px">
+			<a href="login.html"><img src="image/feedback.jpg" width="38" class="aa" alt="诶呀，图片掉到黑洞里了" title="反馈"></a>
+		</div>
+		<div class="right" style="top:50px">
+			<a href="#head"><img src="image/top.jpg" width="38" class="aa" alt="诶呀，图片掉到黑洞里了" title="回到顶部"></a>
+		</div>
+	</div>
+	<br/><br/><br/><br/>
+	<marquee scrollamount="10" onmouseover="this.stop();" onmouseout="this.start();"><img src="image/main/rabit.gif" height="100" alt="诶呀，图片掉到黑洞里了"/></marquee>
+</body>
+
+</html>

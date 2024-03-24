@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>用户注册</title>
+<script language="javascript">
+var count=10;
+var tongyi=false;
+function fwxy()
+{
+	document.getElementById('fuwuxieyi').innerHTML='<div class="fwtk">\
+	<p>欢迎您阅读本网站用户服务协议，其阐述的内容和条件适用于用户使用本网站时的各项服务。本网站各项服务的所有权、运营权和解释权归叶熹宁所有。用户应当仔细阅读、充分理解及完全同意遵守《服务条款》（简称本协议）的全部内容。</p>\
+	<h2>一、定义</h2>\
+        <p>用户：指同意并遵守本协议，完成本网站所有注册流程，拥有本网站用户登录账号和密码的自然人。</p>\
+		<p>用户注册：指用户登录本网站，按要求填写相关信息并确认同意履行本协议的过程。</p>\
+		<h2>二、用户注意事项</h2>\
+        <p>1.在遵守中华人民共和国有关法律法规以及本协议的前提下，用户有权使用本网站为用户提供的全部服务功能。。</p>\
+		<p>2.用户如果对本网站提供的服务功能有疑问，可以通过电话、邮件等方式进行咨询。</p>\
+		<p>3.用户通过账号和密码使用本网站的行为，均视为用户本人行为，用户应当承担由此导致的相关后果和责任。</p>\
+		<p>用户对在本网站中发布信息的准确性和合法性独立承担一切法律责任，不得在本网站发布违反国家法律法规的内容：<br />\
+（1）违反宪法确定的基本原则的。<br />\
+（2）危害国家安全，泄露国家秘密，颠覆国家政权，破坏国家统一的。<br />\
+（3）损害国家荣誉和利益的。<br />\
+（4）煽动民族仇恨、民族歧视，破坏民族团结的。<br />\
+（5）破坏国家宗教政策，宣扬邪教和封建迷信的。<br />\
+（6）散布谣言，扰乱社会秩序，破坏社会稳定的。<br />\
+（7）散布淫秽、色情、赌博、暴力、恐怖或者教唆犯罪的。<br />\
+（8）侮辱或者诽谤他人，侵害他人合法权益的。<br />\
+（9）煽动非法集会、结社、游行、示威、聚众扰乱社会秩序的。<br />\
+（10）以非法民间组织名义活动的。<br />\
+（11）不遵守法律法规、社会主义制度、国家利益、公民合法权益、公共秩序、社会道德风尚和信息真实性等“七条底线”要求的。<br />\
+（12）发布、传送、传播、储存侵害他人名誉权、肖像权、知识产权、商业秘密等合法权利内容的。<br />\
+（13）涉及他人隐私、个人信息或资料的。<br />\
+（14）发表、传送、传播骚扰、广告信息、过度营销信息及垃圾信息或含有任何性或性暗示的。<br />\
+（15）其他违反法律法规、政策及公序良俗、社会公德或干扰本网站正常运营和侵犯其他用户或第三方合法权益内容的。<br />\
+如因用户违反有关法律、法规或服务条款而给本网站或任何其他第三方造成损失，用户应承担由此造成的一切法律责任（包括但不限于民事责任、行政责任、刑事责任），赔偿本网站或第三方的损失。</p>\
+......\
+    </div>\
+</div>';
+	document.getElementById('fuwuxieyi').innerHTML+='<button id="yes" disabled="disabled" onclick="tongyiguan()">请认真阅读条款（10秒后继续）</button>';
+   document.getElementById('fuwuxieyi').innerHTML+='&nbsp;&nbsp;';
+	document.getElementById('fuwuxieyi').innerHTML+='<button onclick="butongyiguan()">不同意条款，点击关闭</button>';
+	read();
+}
+function tongyiguan(){
+	document.getElementById('xuanzekuang').innerHTML='<div class="checkbox2"></div>我已阅读并同意';
+	tongyi=true;
+	guan();
+}
+function butongyiguan(){
+	document.getElementById('xuanzekuang').innerHTML='<div class="checkbox1"></div>我已阅读并同意';
+	tongyi=false;
+	guan();
+}
+function guan(){
+	document.getElementById('fuwuxieyi').innerHTML='';
+}
+function read(){
+	if(count<=0){
+		document.getElementById('yes').innerHTML="同意条款，点击注册";
+		document.getElementById("yes").disabled=false;
+	}else{
+		document.getElementById('yes').innerHTML="请认真阅读条款（"+count+"秒后继续）";
+		count--;
+		setTimeout("read()",1000);
+	}
+}
+function checkForm(){
+	if(document.form1.youxiang.value.length<1){
+		alert('电子邮箱不能为空！');
+		document.form1.youxiang.focus();
+		return false;
+	}
+	if(document.form1.number.value.length<1){
+		alert('手机号不能为空！');
+		document.form1.number.focus();
+		return false;
+	}
+	if(document.form1.uname.value.length<6||document.form1.uname.value.length>20){
+		alert('用户名必须为6-20位字符！');
+		document.form1.uname.focus();
+		return false;
+	}
+	if(document.form1.pwd.value.length<6||document.form1.pwd.value.length>20){
+		alert('密码必须为6-20位字符！');
+		document.form1.pwd.focus();
+		return false;
+	}
+	if(document.form1.pwd.value!=document.getElementById("pwd2").value){
+		alert('两次密码必须一致！');
+		document.form1.pwd.value="";
+		document.getElementById("pwd2").value="";
+		document.form1.pwd.focus();
+		return false;
+	}
+	if(tongyi!=true){
+		alert('请阅读服务条款并同意！');
+		return false;
+	}
+	window.location.href="login.html";
+}
+</script>
+<link rel="stylesheet" type="text/css" href="login.css">
+</head>
+
+<body background="image/top/sea.jpg">
+<div class="a">
+<div class="biaoti">用户注册</div>
+<form name="form1" method="post">
+	<table width="500" align="center" border="1" cellpadding="5" cellspacing="0">
+		<tr height="40">
+            <td width="100" align="right">电子邮箱：</td><td align="left"><input type="text" name="youxiang" maxlength="20"/>&nbsp;</td>
+        </tr>
+		<tr height="40">
+            <td width="100" align="right">手机号：</td><td align="left"><input type="text" name="number" maxlength="20"/>&nbsp;</td>
+        </tr>
+        <tr height="40">
+            <td width="100" align="right">用户名：</td><td align="left"><input type="text" name="uname" maxlength="20"/>&nbsp;（6-20位数字或字母）</td>
+        </tr>
+    	<tr height="40">
+            <td width="100" align="right">密码：</td><td align="left"><input type="password" name="pwd" maxlength="20"/>&nbsp;（6-20位字符）</td>
+        </tr>
+        <tr height="40">
+            <td width="100" align="right">重复密码：</td><td align="left"><input type="password" id="pwd2" maxlength="20"/>&nbsp;（6-20位字符）</td>
+        </tr>
+        <tr height="40">
+            <td width="100" align="right"></td>
+			<td align="left">
+				<div id="xuanzekuang"><div class="checkbox1"></div>我已阅读并同意</div>
+				<input type="button" value="服务条款" onclick="fwxy()"/>&nbsp;&nbsp;
+				<input type="button" value="注册" onclick="checkForm();"/>&nbsp;&nbsp;
+				<input type="reset" value="重置"/>
+			</td>
+        </tr>
+	</table>
+</form>
+<br/><br/>
+<div id="fuwuxieyi" align="center" class="kuang"></div>
+</div>
+</body>
+</html>

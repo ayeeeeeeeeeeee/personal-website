@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>foot</title>
+	<script language="JavaScript">
+		function banner() {
+			 var jh = document.getElementById("by");//12.4document对象的方法之getElementById()方法,通过元素的id访问by
+			 jh.appendChild(by.firstChild);
+        }
+		setInterval("banner()", 1200);//12.3.2 window对象的方法-时间等待与间隔方法-setInterval(codes, millisec)-间隔指定的毫秒数重复地执行指定的代码
+	</script>
+	<style type="text/css">
+		*{margin: 0px;}
+		div.b {
+			display: inline-block;
+			font-weight:bolder;
+			font-size: 14pt;
+			color=black;
+			text-decoration:none;
+			background-color: #CBF1FD;
+			border:0px;
+			cursor: pointer;
+			margin: 0px;
+			padding: 12px 5px 0px 5px;
+			width: 150px;
+			height: 40px;
+			text-align: center;
+			float:left;
+		}
+		div.b:link {
+			background-color: #CBF1FD;
+			font-size: 14pt;
+			color=black;
+		}
+		div.b:visited {
+			background: #C9FAE2;
+			font-size: 12pt;
+		}
+		div.b:hover {
+			background: #73BAF5;
+			font-size: 16pt;
+		}
+		div.b:active {
+			background: #FAA047;
+			font-size: 16pt;
+		}
+		div.l {
+			background-color: #CBF1FD;
+			border:0px;
+			margin: 0px;
+			height: 53px;
+			width: 100%;
+			float:left;
+		}
+		div.biaoyu{
+			display: inline-block;	
+			width:auto;    
+        }
+		div.wodezhuye{
+			display:inline-block;
+			font-size: 45px;
+			font-weight:bolder;
+			color:#0AA3ED;
+			font-family: 楷体;
+			padding-left: 10px;
+		}
+		div.a{
+			background:#E7F3FC;
+		}
+		.bj{
+			background-image:url("image/top/大海.webp.jpg");
+			background-size:100% 100%;
+		}
+		#by{
+			height:55px;
+	        overflow: hidden;
+	        list-style: none;
+	        margin-left: 55px;
+        }
+		#by li{
+			height:72px;
+	        line-height:72px;
+	        white-space: nowrap;
+	        overflow: hidden;
+	        font-size: 33px;
+			font-weight:bolder;
+			font-family: 楷体;
+	        color:#4F50EF;
+        }
+		#kuang{
+			width: 800px;
+			margin: auto;
+			border:0px; 
+		}
+		#kuang2{
+			width:800px;
+		}
+	</style>
+</head>
+
+<body>
+	<div align="center" class="a">
+		<div id="kuang2">
+		<div class="wodezhuye">
+			aye的主页
+		</div>
+		<div class="biaoyu">
+			<ul id="by" >
+                <li> Welcome</li>
+                <li> 生活明朗，万物可爱</li>
+                <li> 保持热爱，奔赴山海</li>
+                <li> 去更远的地方，见更亮的光</li>
+                <li> 我们的征途是星辰大海</li>
+            </ul>
+		</div>
+		</div>
+	</div>
+	<div class="l">
+		<div align="center" id="kuang">
+		<a href="main.html" target="main">
+			<div class="b">个人信息</div>
+		</a>
+		<a href="jida.html" target="main">
+			<div class="b">暨大风采</div>
+		</a>
+		<a href="hometown.html" target="main">
+			<div class="b">家乡风貌</div>
+		</a>
+		<a href="game.html" target="main">
+			<div class="b">游戏时间</div>
+		</a>
+		<a href="login.html" target="main">
+			<div class="b">问题反馈</div>
+		</a>
+		</div>
+	</div>
+</body>
+
+</html>

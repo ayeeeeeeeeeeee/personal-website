@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>问题反馈</title>
+		<script>
+			var bArray = new Array("暨大风采", "家乡风貌", "游戏时间", "其他");
+            var sArray = new Array();
+            sArray[0] = new Array("背景图片", "文字大小", "布局排版", "内容", "其他");
+            sArray[1] = new Array("背景图片", "杭州概况", "历史文化", "西湖十景", "其他");
+            sArray[2] = new Array("背景图片", "文字大小", "布局排版", "内容", "其他");
+            sArray[3] = new Array("用户注册", "用户登录", "问题反馈", "回到页首");
+			function init() {
+				var big = document.getElementById("big");
+				for(var i = 0; i < bArray.length; i++) {
+					var option = document.createElement("option");
+					option.value = bArray[i];
+					option.text = bArray[i];
+					big.options.add(option);
+				}
+			}
+			function show() {
+				var big = document.getElementById("big");
+				var small = document.getElementById("small");
+				var pSelectedIndex = big.selectedIndex - 1;
+				var result = document.getElementById("result");
+				if(pSelectedIndex < 0) {
+					result.innerText = "";
+				} else {
+					result.innerText = bArray[pSelectedIndex];
+					var cSelectedIndex = small.selectedIndex - 1;
+					if(cSelectedIndex >= 0) {
+						result.innerText += ", " + sArray[pSelectedIndex][cSelectedIndex];
+					}
+				}
+			}
+			function selectbig() {
+				var big = document.getElementById("big");
+				var small = document.getElementById("small");
+				var pSelectedIndex = big.selectedIndex - 1;
+				for(var i = small.options.length - 1; i > 0; i--) {
+					small.options.remove(i);
+				}
+				if(pSelectedIndex >= 0) {
+					for(var i = 0; i < sArray[pSelectedIndex].length; i++) {
+						var option = document.createElement("option");
+						option.value = sArray[pSelectedIndex][i];
+						option.text = sArray[pSelectedIndex][i];
+						small.options.add(option);
+					}
+				}
+				show();
+			}
+var cbs=document.getElementsByName("cb[]");
+function myCheck(){
+	var count=0;
+	for(var i=0;i<cbs.length;i++){
+		if(cbs[i].checked){
+			count++;
+		}
+	}
+	if(count>=3){
+		for(var i=0;i<cbs.length;i++){
+			if(cbs[i].checked==false){
+				cbs[i].disabled=true;
+			}
+		}
+	}else{
+		for(var i=0;i<cbs.length;i++){
+			if(cbs[i].checked==false){
+				cbs[i].disabled=false;
+			}
+		}
+	}
+
+}
+var cbs2=document.getElementsByName("cb2[]");
+function checkAll(){
+	for(var i=0;i<cbs2.length;i++){
+		cbs2[i].checked=true;
+	}
+}
+function unCheckAll(){
+	for(var i=0;i<cbs2.length;i++){
+		cbs2[i].checked=false;
+	}
+}
+function checkOpp(){
+  for(var i=0;i<cbs2.length;i++){
+		if(cbs2[i].checked){
+			cbs2[i].checked=false;
+		}else{
+			cbs2[i].checked=true;
+		}
+	}
+}
+function tijiao(){
+	alert("已提交！");
+}
+</script>
+		<style type="text/css">
+			.huge{
+			width:880px;
+			background: white;
+			opacity:0.93;
+			margin: auto;
+			border-radius:25px;
+			height: 1200px;
+		    }
+			.big{
+				padding-left: 20px;
+				font-size: 20px;
+				width:700px;
+				display: block;
+			}
+			.kuai{
+				padding-left: 20px;
+				padding-top: 5px;
+			}
+			#a1{
+				height:200px;
+			}
+			#a2{
+				height:230px;
+			}
+			#tijiao{
+				font-size: 20px;
+			}
+			div.right {
+			position: fixed;
+			padding: 0px;
+			right: 0px;
+			cursor: pointer;
+			opacity: 0.93;
+		    }
+			.aa {
+			border: black 2px solid;
+		}
+
+		.aa:hover {
+			border: #E35153 2px solid;
+		}
+		</style>
+	</head>
+<body background="image/top/sea.jpg" onLoad="init()" >
+<a name="head"></a>
+<div class="huge">
+	<div class="kuai">
+		<h1>一、你的反馈</h1>
+	    <h3>1、你认为哪几个板块对你了解我的相关信息帮助较大（请选择，不多余3个）</h3>
+	</div>
+	<div class="big" id="a1">
+		<table width="300" border="1" cellpadding="5" cellspacing="0" align="left">
+           <tr height="40">
+			   <td><input type="checkbox" name="cb[]" onchange="myCheck();"/> 个人信息</td>
+		   </tr>
+           <tr height="40">
+			   <td><input type="checkbox" name="cb[]" onchange="myCheck();"/> 暨大风采</td>
+		   </tr>
+			<tr height="40">
+			   <td><input type="checkbox" name="cb[]" onchange="myCheck();"/> 家乡风貌</td>
+		   </tr>
+			<tr height="40">
+			   <td><input type="checkbox" name="cb[]" onchange="myCheck();"/> 游戏时间</td>
+		   </tr>
+			<tr height="40">
+			   <td><input type="checkbox" name="cb[]" onchange="myCheck();"/> 其他</td>
+		   </tr>
+        </table>
+	</div>
+	<div class="kuai">
+	    <h3>2、在游戏时间中列出的游戏你玩过哪几款？</h3>
+	</div>
+	<div class="big" id="a2">
+		<table width="300" border="1" cellpadding="5" cellspacing="0" align="left">
+			<tr height="40">
+				<td>
+					<input type="button" value="全选" onclick="checkAll();"/>
+					<input type="button" value="全不选" onclick="unCheckAll();"/> 
+					<input type="button" value="反选" onclick="checkOpp();"/> 
+				</td>
+			</tr>
+            <tr height="40"><td><input type="checkbox" name="cb2[]" /> 恐龙跳一跳</td></tr>
+			<tr height="40"><td><input type="checkbox" name="cb2[]" /> 黄金矿工</td></tr>
+			<tr height="40"><td><input type="checkbox" name="cb2[]" /> 植物大战僵尸</td></tr>
+			<tr height="40"><td><input type="checkbox" name="cb2[]" /> Q版泡泡堂</td></tr>
+			<tr height="40"><td><input type="checkbox" name="cb2[]" /> 原神</td></tr>
+        </table>
+	</div>
+	<div class="big" align="left"><h1>二、你的建议</h1></div>
+	<div class="big">
+		<form>
+			板块：
+			<select id="big" onChange="selectbig()">
+				<option value="">请选择板块</option>
+			</select>
+			<br /><br />内容：
+			<select id="small" onChange="show()">
+				<option value="">请选择内容</option>
+			</select>
+			<br /><br />你选择的是：
+			<span id="result"></span>
+			<br />
+		</form>
+		<p>对于选择的部分，请在下列方框中输入你的建议</p>
+		<textarea rows="10" cols="50" style="width: 80%;height: 200px; overflow: scroll;margin-left: 10%;"></textarea>
+		<div align="right">
+			<button id="tijao" onclick="tijiao()">确认提交</button>
+		</div>
+	</div>
+</div>
+<div class="right" style="top:10%">
+		<div class="right" style="top:10px">
+			<a href="#head"><img src="image/top.jpg" width="38" class="aa" alt="诶呀，图片掉到黑洞里了" title="回到顶部"></a>
+		</div>
+</div>
+</body>
+</html>
